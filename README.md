@@ -25,17 +25,16 @@ This fork was reworked with the aid of AI coding. Functionality is tested and ve
  * Usage of `tapas-dl.py`:
  ```
  $ ./tapas-dl.py -h
- usage: tapas-dl.py [URL/name/ID] [-c [PATH]] [-o [PATH]]
+ usage: tapas-dl.py [URL/name/ID] [-f [PATH]] [-c [PATH]] [-o [PATH]]
  
  Downloads Comics from 'https://tapas.io'.
 
  positional arguments:
    URL/name/ID           URL, comic url name, or comic ID
-                         Go to the comic you want to download (any page)
-                         Rightclick on the comic name in the upper left corner and select "Copy linkaddress" (Or similar) or just use the name behind series in the url
-                         Examples: https://tapas.io/series/Erma, RavenWolf, ...
  
  optional arguments:
+   -f [PATH], --series-file [PATH]
+                        Optional file containing multiple Series URLs, names, or IDs separated by new lines
    -c [PATH], --cookies [PATH]
                          Optional cookies.txt file to load, can be used to allow the script to "log in" and circumvent age verification.
    -o [PATH], --output-dir [PATH]
