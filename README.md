@@ -25,7 +25,7 @@ This fork was reworked with the aid of AI coding. Functionality is tested and ve
  * Usage of `tapas-dl.py`:
  ```
  $ ./tapas-dl.py -h
- usage: tapas-dl.py [URL/name/ID] [-f [PATH]] [-c [PATH]] [-o [PATH]]
+ usage: tapas-dl.py [URL/name/ID] [-l [PATH]] [-c [PATH]] [-o [PATH]] [-f] [-v] [--headed]
  
  Downloads Comics from 'https://tapas.io'.
 
