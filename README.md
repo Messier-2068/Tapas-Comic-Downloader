@@ -24,22 +24,45 @@ This fork was reworked with the aid of AI coding. Functionality is tested and ve
 3. Start the download
  * Usage of `tapas-dl.py`:
  ```
- $ ./tapas-dl.py -h
- usage: tapas-dl.py [URL/name/ID] [-l [PATH]] [-c [PATH]] [-o [PATH]] [-f] [-v] [--headed]
- 
- Downloads Comics from 'https://tapas.io'.
+ usage: tapas-dl.py [SERIES ...] [-l [PATH]] [-f] [-v] [-c [PATH]] [-o [PATH]] [--headed] [-wuf] [-tn]
 
- positional arguments:
-   URL/name/ID           URL, comic url name, or comic ID
- 
- optional arguments:
-   -f [PATH], --series-file [PATH]
-                        Optional file containing multiple Series URLs, names, or IDs separated by new lines
-   -c [PATH], --cookies [PATH]
-                         Optional cookies.txt file to load, can be used to allow the script to "log in" and circumvent age verification.
-   -o [PATH], --output-dir [PATH]
-                         Output directory where comics should be placed.
-                         If left blank, the script folder will be used. 
+Scans and downloads comics/novels from 'https://tapas.io'.
+
+positional arguments:
+SERIES Tapas series ID, slug, URL, or @file.
+Examples:
+313219
+the-survivor
+https://tapas.io/series/313219
+https://tapas.io/series/the-survivor
+@series.txt
+
+optional arguments:
+-l [PATH], --series-file [PATH]
+Read series arguments from a text file.
+One series per line. Can be supplied multiple times.
+
+-f, --force Reprocess episodes marked complete in the state file.
+
+-v, --verbose Enable verbose output.
+
+-c [PATH], --cookies [PATH]
+Optional Netscape/Mozilla cookies.txt file.
+
+-o [PATH], --output-dir [PATH]
+Base output directory.
+If omitted, series folders are created in the
+current working directory.
+
+--headed Show Chromium while loading, scrolling, and
+probing the Tapas episode list.
+
+-wuf Allow Playwright to verify and click the first
+sequential locked episode
+
+-tn Download thumbnails for ALL discovered episodes.
+Default: Thumbnails are downloaded only for
+episodes that are being scraped. 
  ```
  * The script will create an folder with the name and urlName (`name [urlName]`) of the comic in the current shell location (like git) and download all images of the comic into it.
  * To specify an base output path use `-o/--output-dir \desired\path` (If not specified, files and folders will be created where the script was run.)
